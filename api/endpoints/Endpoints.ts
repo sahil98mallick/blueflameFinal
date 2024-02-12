@@ -1,4 +1,5 @@
-export const primaryURL = "https://api.blueflame.ai/"
+// export const primaryURL = "https://api.blueflame.ai/"
+export const primaryURL = process.env.BLUEFLAME_API
 
 export const endpoints = {
     auth: {

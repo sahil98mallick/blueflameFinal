@@ -26,11 +26,13 @@ const Header = () => {
     };
 
     const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+    const token = getToken();
     React.useEffect(() => {
-        const token = getToken();
         console.log("Token retrieved:", token);
-        setIsAuthenticated(!!token);
-    }, []);
+        if (token) {
+            setIsAuthenticated(!!token);
+        }
+    }, [token]);
 
     const handleSignOut = () => {
         removeToken().then(removed => {
